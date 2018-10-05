@@ -1,0 +1,31 @@
+Commands
+ 1  apt-get update
+    2  sudo apt-get install software-properties-common
+    3  sudo apt-add-repository --yes --update ppa:ansible/ansible
+    4  sudo apt-get install ansible
+    5  apt-get update
+    6  ansible --version
+    7  ansible-playbook --version
+    8  clear
+    9  apt-get install git
+   10  git -version
+   11  git --version
+   12  mkdir ansible
+   13  cd ansible
+   14  git clone https://github.com/namanbajaj08/ansible.git
+   15  ls
+   16  cd ansible
+   17  ls
+   18  ansible -i dev --list-hosts all
+   19  sudo vi /etc/ansible/ansible.cfg
+   20  git pull
+   21  ls
+   22  ansible --list-hosts all
+   23  ansible --list-host "*"
+   24  ansible --list-hosts loadbalancer
+   25  ansible --list-hosts webserver
+   26  ansible --list-hosts db01
+   27  ansible --list-hosts "app0*"
+   28  ansible --list-hosts database:control
+   31  ansible --list-hosts webserver[0]
+   32  ansible --list-hosts \!webserver

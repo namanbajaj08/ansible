@@ -1,0 +1,81 @@
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible -i dev --list-hosts all
+ [WARNING]: Found both group and host with same name: control
+
+  hosts (5):
+    db01
+    app01
+    app02
+    control
+    lb01
+
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ls
+README.md  ansible.cfg  dev     //add ansible.cfg(github repo) file  so that we don't have to mention -i <filename>
+
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts all
+ [WARNING]: Found both group and host with same name: control
+
+  hosts (5):
+    db01
+    app01
+    app02
+    control
+    lb01
+
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-host "*"
+ [WARNING]: Found both group and host with same name: control
+
+  hosts (5):
+    control
+    db01
+    app01
+    app02
+    lb01
+	
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts loadbalancer
+ [WARNING]: Found both group and host with same name: control
+
+  hosts (1):
+    lb01
+	
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts webserver
+ [WARNING]: Found both group and host with same name: control
+
+  hosts (2):
+    app01
+    app02
+	
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts db01
+ [WARNING]: Found both group and host with same name: control
+
+  hosts (1):
+    db01
+	
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts "app0*"
+ [WARNING]: Found both group and host with same name: control
+
+  hosts (2):
+    app01
+    app02
+	
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts database:control
+ [WARNING]: Found both group and host with same name: control  //to specify multiple host use : to seperate
+
+  hosts (2):
+    db01
+    control
+
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts webserver[0]
+ [WARNING]: Found both group and host with same name: control //Indexing 
+
+  hosts (1):
+    app01
+
+root@ip-172-31-9-108:/home/ubuntu/ansible/ansible# ansible --list-hosts \!webserver
+ [WARNING]: Found both group and host with same name: control  //except webserver host
+
+  hosts (3):
+    control
+    db01
+    lb01
+
+	
