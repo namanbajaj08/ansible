@@ -1,5 +1,5 @@
 [loadbalancer]
-lb01 ansible_connection=local
+ip-172-31-9-108
 
 [webserver]
 app01 ansible_connection=local
