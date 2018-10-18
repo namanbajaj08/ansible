@@ -2,5 +2,10 @@
   - hosts: webserver
     become: true
     tasks:
-      - name: appache2
-        apt: name=appache2 state=present update_cache=yes
+      - name: install apache2
+        apt: name={{item}} state=present update_cache=yes
+        with_items:
+          - apache2
+          - libapache2-mod-wsgi
+          - python-pip
+          - pyhton-virtualenv
